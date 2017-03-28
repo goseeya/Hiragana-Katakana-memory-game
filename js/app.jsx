@@ -84,18 +84,7 @@ class Board extends React.Component {
     }
 
     function getArray(props){
-      let arr = [];
-      if(this.state.val1==true){
-        arr = ['あ','い','う','え','お','か','a','i','u','e','o','ka']
-
-      } else if(this.state.val2==true){
-        arr = ['あ','い','う','え','お','か','a','i','u','e','o','ka']
-
-      } else {
-        arr = ['あ','い','う','え','お','か','a','i','u','e','o','ka']
-
-      }
-
+      let arr = ['あ','い','う','え','お','か','a','i','u','e','o','ka']
       return arr;
     }
   }
@@ -176,48 +165,42 @@ let squaresNew = this.state.squares.slice();
 }
   }
   render(i) {
-    let tablicaSquare = [];
 
-    for (var i = 0; i < 12; i++) {
-      tablicaSquare.push( <Square value={this.state.squares[i]}
-           onClick={ () => this.handleClick(i)}/>)
-    }
+let tablicaSquare = [  <Square value={this.state.squares[0]}
+     onClick={ () => this.handleClick(0)}/>,
 
-// let tablicaSquare = [  <Square value={this.state.squares[0]}
-//      onClick={ () => this.handleClick(0)}/>,
-//
-//    <Square style={{backgroundColor: 'red', boxSizing: 'border-box'}} value={this.state.squares[1]}
-//         onClick={ () => this.handleClick(1)}/>,
-//
-//       <Square style={{boxSizing: 'border-box'}} value={this.state.squares[2]}
-//            onClick={ () => this.handleClick(2)}/>,
-//
-//          <Square style={{boxSizing: 'border-box'}} value={this.state.squares[3]}
-//               onClick={ () => this.handleClick(3)}/>,
-//
-//             <Square style={{boxSizing: 'border-box'}} value={this.state.squares[4]}
-//                  onClick={ () => this.handleClick(4)}/>,
-//
-//                <Square style={{boxSizing: 'border-box'}} value={this.state.squares[5]}
-//                     onClick={ () => this.handleClick(5)}/>,
-//
-//                   <Square style={{boxSizing: 'border-box'}} value={this.state.squares[6]}
-//                        onClick={ () => this.handleClick(6)}/>,
-//
-//                      <Square style={{boxSizing: 'border-box'}} value={this.state.squares[7]}
-//                           onClick={ () => this.handleClick(7)}/>,
-//
-//                         <Square style={{boxSizing: 'border-box'}} value={this.state.squares[8]}
-//                              onClick={ () => this.handleClick(8)}/>,
-//
-//                            <Square style={{boxSizing: 'border-box'}} value={this.state.squares[9]}
-//                                 onClick={ () => this.handleClick(9)}/>,
-//
-//                               <Square style={{boxSizing: 'border-box'}} value={this.state.squares[10]}
-//                                    onClick={ () => this.handleClick(10)}/>,
-//
-//                                  <Square style={{boxSizing: 'border-box'}} value={this.state.squares[11]}
-//                                       onClick={ () => this.handleClick(11)}/>]
+   <Square style={{backgroundColor: 'red', boxSizing: 'border-box'}} value={this.state.squares[1]}
+        onClick={ () => this.handleClick(1)}/>,
+
+      <Square style={{boxSizing: 'border-box'}} value={this.state.squares[2]}
+           onClick={ () => this.handleClick(2)}/>,
+
+         <Square style={{boxSizing: 'border-box'}} value={this.state.squares[3]}
+              onClick={ () => this.handleClick(3)}/>,
+
+            <Square style={{boxSizing: 'border-box'}} value={this.state.squares[4]}
+                 onClick={ () => this.handleClick(4)}/>,
+
+               <Square style={{boxSizing: 'border-box'}} value={this.state.squares[5]}
+                    onClick={ () => this.handleClick(5)}/>,
+
+                  <Square style={{boxSizing: 'border-box'}} value={this.state.squares[6]}
+                       onClick={ () => this.handleClick(6)}/>,
+
+                     <Square style={{boxSizing: 'border-box'}} value={this.state.squares[7]}
+                          onClick={ () => this.handleClick(7)}/>,
+
+                        <Square style={{boxSizing: 'border-box'}} value={this.state.squares[8]}
+                             onClick={ () => this.handleClick(8)}/>,
+
+                           <Square style={{boxSizing: 'border-box'}} value={this.state.squares[9]}
+                                onClick={ () => this.handleClick(9)}/>,
+
+                              <Square style={{boxSizing: 'border-box'}} value={this.state.squares[10]}
+                                   onClick={ () => this.handleClick(10)}/>,
+
+                                 <Square style={{boxSizing: 'border-box'}} value={this.state.squares[11]}
+                                      onClick={ () => this.handleClick(11)}/>]
       //jezeli tablica para zawiera indeks i to slice i,1
 
       for (var i = 0; i < 6; i++) {
