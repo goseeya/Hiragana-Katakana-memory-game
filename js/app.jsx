@@ -11,8 +11,6 @@ class MemoryTop extends React.Component{
       }
     }
   };
-  // window.scrollTo(0, 1000);
-
   render(){
     return <div>
       <header>
@@ -20,9 +18,8 @@ class MemoryTop extends React.Component{
       </header>
     </div>
   }
-
   handleClick=()=>{
-    if(this.state.style.display== 'none'){
+    if(this.state.style.display==='none'){
       this.setState({
         style: {
           display: 'block'
@@ -35,10 +32,8 @@ class MemoryTop extends React.Component{
         }
       })
     }
-
   }
 }
-
 class MemoryFlag extends React.Component{
   render(){
     let actDate = new Date();
@@ -54,9 +49,7 @@ class MemoryFlag extends React.Component{
     return <div className='flag'><h1 id='hello'>{hello}</h1></div>
   }
 }
-
-
-//memeorygame
+//memorygame
 function Square(props) {
     return (
       <div className="square" onClick={() => props.onClick()}>
@@ -64,13 +57,13 @@ function Square(props) {
       </div>
     );
 }
-
-class Board extends React.Component {
+class MemoryGame extends React.Component {
   constructor() {
     super();
     this.state = {
       squares: Array(12).fill(null),
       tablica: getArray(),
+      // tablica2: getArray2(),
       tablicaMoja: [],
       klikniete: [],
       xIsNext: true,
@@ -80,60 +73,49 @@ class Board extends React.Component {
       selectedCounter: 0,
       val1:true,
       val2:false,
-      val3:false,
     }
 
     function getArray(props){
       let arr = ['あ','い','う','え','お','か','a','i','u','e','o','ka']
       return arr;
     }
+
   }
-
-
-
   renderSquare(i) {
-
     return <Square style={{boxSizing: 'border-box'}} value={this.state.squares[i]}
        onClick={ () => this.handleClick(i)} onDoubleClick={ () => this.handleClick2(i)}/>;
   }
-
-
   handleChange1=()=>{
-this.setState({
+    function getArray(props){
+      let arr = ['あ','い','う','え','お','か','a','i','u','e','o','ka']
+      return arr;
+    }
+    this.setState({
         val1: true,
         val2: false,
-        val3: false
+        tablica: getArray(),
       })
-
   }
   handleChange2=()=>{
+    function getArray2(props){
+      let arr = ['ア','イ','ウ','エ','オ','カ','ア','イ','ウ','エ','オ','カ'];
+      return arr;
+    }
       this.setState({
         val1: false,
         val2: true,
-        val3: false
+        tablica: getArray2(),
       })
-
   }
-  handleChange3=()=>{
-      this.setState({
-        val1: false,
-        val2: false,
-        val3: true
-      })
-
-  }
-
   handleClickReload=()=>{
   window.location.reload()
   }
-
   handleClick(i) {
     this.setState({
       backgroundImage: 'url("./flaga.jpg")',
       counter: this.state.counter+1,
       selectedCounter: this.selectedCounter+1,
     })
-    // const klikniete = [];
     const squares2 = this.state.squares.slice();
     console.log(i);
     console.log(this.state.tablica[i]);
@@ -145,10 +127,7 @@ this.setState({
     });
     this.timerId=setTimeout(()=>{
       if(this.state.klikniete.length==2){
-        // console.log(tablica.indexOf(this.state.klikniete[this.state.klikniete.length-2]))
-//jezeli square[i] nie zawiera czyli index -1 to zmieniamy na null
-let squaresNew = this.state.squares.slice();
-
+        let squaresNew = this.state.squares.slice();
         this.setState({squares: Array(12).fill(null),
           klikniete: [],
         backgroundImage: 'url("./sushiroll.jpg")'})
@@ -162,47 +141,35 @@ let squaresNew = this.state.squares.slice();
       console.log('para');
       console.log(i);
       this.state.pary.push(i);
-}
+    }
   }
   render(i) {
-
-let tablicaSquare = [  <Square value={this.state.squares[0]}
+    let tablicaSquare = [
+      <Square value={this.state.squares[0]}
      onClick={ () => this.handleClick(0)}/>,
-
-   <Square style={{backgroundColor: 'red', boxSizing: 'border-box'}} value={this.state.squares[1]}
-        onClick={ () => this.handleClick(1)}/>,
-
-      <Square style={{boxSizing: 'border-box'}} value={this.state.squares[2]}
-           onClick={ () => this.handleClick(2)}/>,
-
+       <Square style={{backgroundColor: 'red', boxSizing: 'border-box'}} value={this.state.squares[1]}
+            onClick={ () => this.handleClick(1)}/>,
+        <Square style={{boxSizing: 'border-box'}} value={this.state.squares[2]}
+             onClick={ () => this.handleClick(2)}/>,
          <Square style={{boxSizing: 'border-box'}} value={this.state.squares[3]}
               onClick={ () => this.handleClick(3)}/>,
-
-            <Square style={{boxSizing: 'border-box'}} value={this.state.squares[4]}
-                 onClick={ () => this.handleClick(4)}/>,
-
-               <Square style={{boxSizing: 'border-box'}} value={this.state.squares[5]}
-                    onClick={ () => this.handleClick(5)}/>,
-
-                  <Square style={{boxSizing: 'border-box'}} value={this.state.squares[6]}
-                       onClick={ () => this.handleClick(6)}/>,
-
-                     <Square style={{boxSizing: 'border-box'}} value={this.state.squares[7]}
-                          onClick={ () => this.handleClick(7)}/>,
-
-                        <Square style={{boxSizing: 'border-box'}} value={this.state.squares[8]}
-                             onClick={ () => this.handleClick(8)}/>,
-
-                           <Square style={{boxSizing: 'border-box'}} value={this.state.squares[9]}
-                                onClick={ () => this.handleClick(9)}/>,
-
-                              <Square style={{boxSizing: 'border-box'}} value={this.state.squares[10]}
-                                   onClick={ () => this.handleClick(10)}/>,
-
-                                 <Square style={{boxSizing: 'border-box'}} value={this.state.squares[11]}
-                                      onClick={ () => this.handleClick(11)}/>]
-      //jezeli tablica para zawiera indeks i to slice i,1
-
+          <Square style={{boxSizing: 'border-box'}} value={this.state.squares[4]}
+               onClick={ () => this.handleClick(4)}/>,
+           <Square style={{boxSizing: 'border-box'}} value={this.state.squares[5]}
+                onClick={ () => this.handleClick(5)}/>,
+            <Square style={{boxSizing: 'border-box'}} value={this.state.squares[6]}
+                 onClick={ () => this.handleClick(6)}/>,
+             <Square style={{boxSizing: 'border-box'}} value={this.state.squares[7]}
+                  onClick={ () => this.handleClick(7)}/>,
+              <Square style={{boxSizing: 'border-box'}} value={this.state.squares[8]}
+                   onClick={ () => this.handleClick(8)}/>,
+               <Square style={{boxSizing: 'border-box'}} value={this.state.squares[9]}
+                    onClick={ () => this.handleClick(9)}/>,
+                <Square style={{boxSizing: 'border-box'}} value={this.state.squares[10]}
+                     onClick={ () => this.handleClick(10)}/>,
+                 <Square style={{boxSizing: 'border-box'}} value={this.state.squares[11]}
+                      onClick={ () => this.handleClick(11)}/>
+              ]
       for (var i = 0; i < 6; i++) {
         console.log(this.state.pary);
         if(this.state.pary.indexOf(i)>=0){
@@ -210,7 +177,6 @@ let tablicaSquare = [  <Square value={this.state.squares[0]}
           tablicaSquare[i+6]=<Square value={this.state.tablica[i+6]}/>
         }
       }
-
       for (var i = 6; i < 12; i++) {
         console.log(this.state.pary);
         if(this.state.pary.indexOf(i)>=0){
@@ -218,8 +184,6 @@ let tablicaSquare = [  <Square value={this.state.squares[0]}
           tablicaSquare[i-6]=<Square value={this.state.tablica[i-6]}/>
         }
       }
-
-    // const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     return (
       <div>
         <div className='options'>
@@ -230,8 +194,6 @@ let tablicaSquare = [  <Square value={this.state.squares[0]}
           <label for="cbox1">hiragana</label>
           <input onChange={this.handleChange2} checked={this.state.val2} type="radio" id="cbox2" value="first_checkbox"></input>
           <label for="cbox2">katakana</label>
-          <input onChange={this.handleChange3} checked={this.state.val3} type="radio" id="cbox3" value="first_checkbox"></input>
-          <label for="cbox3">both</label>
           <p>moves: {this.state.counter}</p>
         </div>
         <div className="status">{status}</div>
@@ -241,24 +203,7 @@ let tablicaSquare = [  <Square value={this.state.squares[0]}
     );
   }
 }
-
-class MemoryGame extends React.Component {
-  render() {
-    return (
-      <div className="game">
-        <div className="game-board">
-          <Board />
-        </div>
-        <div className="game-info">
-          <div>{/* status */}</div>
-          <ol>{/* TODO */}</ol>
-        </div>
-      </div>
-    );
-  }
-}
 //end of memorygame
-
 
 class MemoryBottom extends React.Component{
   render(){

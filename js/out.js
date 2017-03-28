@@ -24138,7 +24138,7 @@ var MemoryTop = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (MemoryTop.__proto__ || Object.getPrototypeOf(MemoryTop)).call(this, props));
 
     _this.handleClick = function () {
-      if (_this.state.style.display == 'none') {
+      if (_this.state.style.display === 'none') {
         _this.setState({
           style: {
             display: 'block'
@@ -24163,9 +24163,6 @@ var MemoryTop = function (_React$Component) {
 
   _createClass(MemoryTop, [{
     key: 'render',
-
-    // window.scrollTo(0, 1000);
-
     value: function render() {
       return _react2.default.createElement(
         'div',
@@ -24257,8 +24254,7 @@ var MemoryFlag = function (_React$Component2) {
 
   return MemoryFlag;
 }(_react2.default.Component);
-
-//memeorygame
+//memorygame
 
 
 function Square(props) {
@@ -24271,45 +24267,20 @@ function Square(props) {
   );
 }
 
-var Board = function (_React$Component3) {
-  _inherits(Board, _React$Component3);
+var MemoryGame = function (_React$Component3) {
+  _inherits(MemoryGame, _React$Component3);
 
-  function Board() {
-    _classCallCheck(this, Board);
+  function MemoryGame() {
+    _classCallCheck(this, MemoryGame);
 
-    var _this3 = _possibleConstructorReturn(this, (Board.__proto__ || Object.getPrototypeOf(Board)).call(this));
+    var _this3 = _possibleConstructorReturn(this, (MemoryGame.__proto__ || Object.getPrototypeOf(MemoryGame)).call(this));
 
-    _this3.handleChange1 = function () {
-      _this3.setState({
-        val1: true,
-        val2: false,
-        val3: false
-      });
-    };
-
-    _this3.handleChange2 = function () {
-      _this3.setState({
-        val1: false,
-        val2: true,
-        val3: false
-      });
-    };
-
-    _this3.handleChange3 = function () {
-      _this3.setState({
-        val1: false,
-        val2: false,
-        val3: true
-      });
-    };
-
-    _this3.handleClickReload = function () {
-      window.location.reload();
-    };
+    _initialiseProps.call(_this3);
 
     _this3.state = {
       squares: Array(12).fill(null),
       tablica: getArray(),
+      // tablica2: getArray2(),
       tablicaMoja: [],
       klikniete: [],
       xIsNext: true,
@@ -24318,18 +24289,18 @@ var Board = function (_React$Component3) {
       backgroundImage: 'url("./sushiroll.jpg")',
       selectedCounter: 0,
       val1: true,
-      val2: false,
-      val3: false
+      val2: false
     };
 
     function getArray(props) {
       var arr = ['あ', 'い', 'う', 'え', 'お', 'か', 'a', 'i', 'u', 'e', 'o', 'ka'];
       return arr;
     }
+
     return _this3;
   }
 
-  _createClass(Board, [{
+  _createClass(MemoryGame, [{
     key: 'renderSquare',
     value: function renderSquare(i) {
       var _this4 = this;
@@ -24351,7 +24322,6 @@ var Board = function (_React$Component3) {
         counter: this.state.counter + 1,
         selectedCounter: this.selectedCounter + 1
       });
-      // const klikniete = [];
       var squares2 = this.state.squares.slice();
       console.log(i);
       console.log(this.state.tablica[i]);
@@ -24363,10 +24333,7 @@ var Board = function (_React$Component3) {
       });
       this.timerId = setTimeout(function () {
         if (_this5.state.klikniete.length == 2) {
-          // console.log(tablica.indexOf(this.state.klikniete[this.state.klikniete.length-2]))
-          //jezeli square[i] nie zawiera czyli index -1 to zmieniamy na null
           var squaresNew = _this5.state.squares.slice();
-
           _this5.setState({ squares: Array(12).fill(null),
             klikniete: [],
             backgroundImage: 'url("./sushiroll.jpg")' });
@@ -24423,8 +24390,6 @@ var Board = function (_React$Component3) {
         onClick: function onClick() {
           return _this6.handleClick(11);
         } })];
-      //jezeli tablica para zawiera indeks i to slice i,1
-
       for (var i = 0; i < 6; i++) {
         console.log(this.state.pary);
         if (this.state.pary.indexOf(i) >= 0) {
@@ -24432,7 +24397,6 @@ var Board = function (_React$Component3) {
           tablicaSquare[i + 6] = _react2.default.createElement(Square, { value: this.state.tablica[i + 6] });
         }
       }
-
       for (var i = 6; i < 12; i++) {
         console.log(this.state.pary);
         if (this.state.pary.indexOf(i) >= 0) {
@@ -24440,8 +24404,6 @@ var Board = function (_React$Component3) {
           tablicaSquare[i - 6] = _react2.default.createElement(Square, { value: this.state.tablica[i - 6] });
         }
       }
-
-      // const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
       return _react2.default.createElement(
         'div',
         null,
@@ -24471,12 +24433,6 @@ var Board = function (_React$Component3) {
             { 'for': 'cbox2' },
             'katakana'
           ),
-          _react2.default.createElement('input', { onChange: this.handleChange3, checked: this.state.val3, type: 'radio', id: 'cbox3', value: 'first_checkbox' }),
-          _react2.default.createElement(
-            'label',
-            { 'for': 'cbox3' },
-            'both'
-          ),
           _react2.default.createElement(
             'p',
             null,
@@ -24495,46 +24451,44 @@ var Board = function (_React$Component3) {
     }
   }]);
 
-  return Board;
-}(_react2.default.Component);
-
-var MemoryGame = function (_React$Component4) {
-  _inherits(MemoryGame, _React$Component4);
-
-  function MemoryGame() {
-    _classCallCheck(this, MemoryGame);
-
-    return _possibleConstructorReturn(this, (MemoryGame.__proto__ || Object.getPrototypeOf(MemoryGame)).apply(this, arguments));
-  }
-
-  _createClass(MemoryGame, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'game' },
-        _react2.default.createElement(
-          'div',
-          { className: 'game-board' },
-          _react2.default.createElement(Board, null)
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'game-info' },
-          _react2.default.createElement('div', null),
-          _react2.default.createElement('ol', null)
-        )
-      );
-    }
-  }]);
-
   return MemoryGame;
 }(_react2.default.Component);
 //end of memorygame
 
+var _initialiseProps = function _initialiseProps() {
+  var _this9 = this;
 
-var MemoryBottom = function (_React$Component5) {
-  _inherits(MemoryBottom, _React$Component5);
+  this.handleChange1 = function () {
+    function getArray(props) {
+      var arr = ['あ', 'い', 'う', 'え', 'お', 'か', 'a', 'i', 'u', 'e', 'o', 'ka'];
+      return arr;
+    }
+    _this9.setState({
+      val1: true,
+      val2: false,
+      tablica: getArray()
+    });
+  };
+
+  this.handleChange2 = function () {
+    function getArray2(props) {
+      var arr = ['ア', 'イ', 'ウ', 'エ', 'オ', 'カ', 'ア', 'イ', 'ウ', 'エ', 'オ', 'カ'];
+      return arr;
+    }
+    _this9.setState({
+      val1: false,
+      val2: true,
+      tablica: getArray2()
+    });
+  };
+
+  this.handleClickReload = function () {
+    window.location.reload();
+  };
+};
+
+var MemoryBottom = function (_React$Component4) {
+  _inherits(MemoryBottom, _React$Component4);
 
   function MemoryBottom() {
     _classCallCheck(this, MemoryBottom);
@@ -24561,8 +24515,8 @@ var MemoryBottom = function (_React$Component5) {
   return MemoryBottom;
 }(_react2.default.Component);
 
-var App = function (_React$Component6) {
-  _inherits(App, _React$Component6);
+var App = function (_React$Component5) {
+  _inherits(App, _React$Component5);
 
   function App() {
     _classCallCheck(this, App);
