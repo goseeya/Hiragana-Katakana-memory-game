@@ -99,34 +99,28 @@ class Board extends React.Component {
 
 
   handleChange1=()=>{
-    if(this.state.val1==true){
-      this.setState({
+this.setState({
+        val1: true,
         val2: false,
         val3: false
       })
-    } else {
-      this.state.val1=true;
-    }
+
   }
   handleChange2=()=>{
-    if(this.state.val2==true){
       this.setState({
         val1: false,
+        val2: true,
         val3: false
       })
-    }else {
-      this.state.val2=true;
-    }
+
   }
   handleChange3=()=>{
-    if(this.state.val3==true){
       this.setState({
         val1: false,
-        val2: false
+        val2: false,
+        val3: true
       })
-    }else {
-      this.state.val3=true;
-    }
+
   }
 
   handleClickReload=()=>{
