@@ -81,6 +81,7 @@ header>ul>li>a{
 
 .game {
   text-align: center;
+
 }
 
 .square {
@@ -91,6 +92,7 @@ header>ul>li>a{
   margin: 20px;
   line-height: 210px;
   font-size: 200px;
+  text-align: center;
   font-weight: bolder;
   box-sizing: border-box;
   width: 250px;
@@ -138,6 +140,11 @@ header>ul>li>a{
   // width: 50%;
   margin: 0 auto;
 
+}
+
+.status {
+  text-align: center;
+  // margin-left: 40px;;
 }
 
 .letter-inside {

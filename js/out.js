@@ -11405,7 +11405,7 @@ exports = module.exports = __webpack_require__(86)(undefined);
 exports.push([module.i, "@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);", ""]);
 
 // module
-exports.push([module.i, "* {\n  font-family: 'Noto Sans JP', sans-serif; }\n\nheader {\n  height: 60px; }\n\nheader li {\n  font-weight: 900;\n  line-height: 35px;\n  text-transform: uppercase;\n  list-style: none;\n  display: inline;\n  padding: 10px;\n  float: right;\n  position: relative;\n  color: black; }\n\nheader > ul > li > a {\n  text-decoration: none;\n  color: black; }\n\n#hello {\n  font-size: 100px;\n  text-align: center;\n  padding-top: 250px;\n  color: white;\n  text-shadow: 2px 2px #000000; }\n\n.flag {\n  margin-top: -65px;\n  background-image: url(\"https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/EZWO30D5TV.jpg\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  height: 600px; }\n\n#menu {\n  margin-left: -30px;\n  position: absolute; }\n\n#menu li, a {\n  display: inline-block;\n  margin-left: -25px;\n  padding-right: 20px;\n  text-decoration: none;\n  color: white; }\n\n.options {\n  text-align: center;\n  padding-left: 100px;\n  padding-right: 100px; }\n\n.game {\n  text-align: center; }\n\n.square {\n  display: inline-block;\n  vertical-align: top;\n  border: 1px solid black;\n  border-radius: 30px;\n  margin: 20px;\n  line-height: 210px;\n  font-size: 200px;\n  font-weight: bolder;\n  box-sizing: border-box;\n  width: 250px;\n  height: 250px;\n  background-image: url(" + __webpack_require__(55) + ");\n  background-position: center;\n  background-size: cover; }\n\n.letter {\n  font-size: 180px;\n  font-weight: bolder;\n  text-align: center;\n  line-height: 200px; }\n\n.letters div {\n  display: inline-block;\n  width: 250px; }\n\n.letters-back {\n  box-sizng: border-box;\n  height: 250px;\n  margin: 10px;\n  border: 1px solid gray;\n  border-radius: 20px;\n  background-image: url(" + __webpack_require__(55) + ");\n  background-position: center;\n  background-size: cover;\n  background-repeat: no-repeat; }\n\n#play {\n  display: block;\n  margin: 0 auto; }\n\n.letter-inside {\n  width: 200px;\n  height: 200px; }\n\nfooter {\n  color: gray;\n  padding: 10px; }\n\nfooter a {\n  padding-left: 30px;\n  color: gray; }\n", ""]);
+exports.push([module.i, "* {\n  font-family: 'Noto Sans JP', sans-serif; }\n\nheader {\n  height: 60px; }\n\nheader li {\n  font-weight: 900;\n  line-height: 35px;\n  text-transform: uppercase;\n  list-style: none;\n  display: inline;\n  padding: 10px;\n  float: right;\n  position: relative;\n  color: black; }\n\nheader > ul > li > a {\n  text-decoration: none;\n  color: black; }\n\n#hello {\n  font-size: 100px;\n  text-align: center;\n  padding-top: 250px;\n  color: white;\n  text-shadow: 2px 2px #000000; }\n\n.flag {\n  margin-top: -65px;\n  background-image: url(\"https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/EZWO30D5TV.jpg\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  height: 600px; }\n\n#menu {\n  margin-left: -30px;\n  position: absolute; }\n\n#menu li, a {\n  display: inline-block;\n  margin-left: -25px;\n  padding-right: 20px;\n  text-decoration: none;\n  color: white; }\n\n.options {\n  text-align: center;\n  padding-left: 100px;\n  padding-right: 100px; }\n\n.game {\n  text-align: center; }\n\n.square {\n  display: inline-block;\n  vertical-align: top;\n  border: 1px solid black;\n  border-radius: 30px;\n  margin: 20px;\n  line-height: 210px;\n  font-size: 200px;\n  text-align: center;\n  font-weight: bolder;\n  box-sizing: border-box;\n  width: 250px;\n  height: 250px;\n  background-image: url(" + __webpack_require__(55) + ");\n  background-position: center;\n  background-size: cover; }\n\n.letter {\n  font-size: 180px;\n  font-weight: bolder;\n  text-align: center;\n  line-height: 200px; }\n\n.letters div {\n  display: inline-block;\n  width: 250px; }\n\n.letters-back {\n  box-sizng: border-box;\n  height: 250px;\n  margin: 10px;\n  border: 1px solid gray;\n  border-radius: 20px;\n  background-image: url(" + __webpack_require__(55) + ");\n  background-position: center;\n  background-size: cover;\n  background-repeat: no-repeat; }\n\n#play {\n  display: block;\n  margin: 0 auto; }\n\n.status {\n  text-align: center; }\n\n.letter-inside {\n  width: 200px;\n  height: 200px; }\n\nfooter {\n  color: gray;\n  padding: 10px; }\n\nfooter a {\n  padding-left: 30px;\n  color: gray; }\n", ""]);
 
 // exports
 
@@ -24293,6 +24293,7 @@ var MemoryGame = function (_React$Component3) {
     };
 
     function getArray(props) {
+      /*TODO*/
       var arr = ['あ', 'い', 'う', 'え', 'お', 'か', 'a', 'i', 'u', 'e', 'o', 'ka'];
       return arr;
     }
@@ -24443,9 +24444,8 @@ var MemoryGame = function (_React$Component3) {
         _react2.default.createElement(
           'div',
           { className: 'status' },
-          status
+          tablicaSquare
         ),
-        tablicaSquare,
         _react2.default.createElement('input', { id: 'play', type: 'button', value: 'play again', onClick: this.handleClickReload })
       );
     }
@@ -24459,6 +24459,7 @@ var _initialiseProps = function _initialiseProps() {
   var _this9 = this;
 
   this.handleChange1 = function () {
+    /*TODO*/ /*TODO*/
     function getArray(props) {
       var arr = ['あ', 'い', 'う', 'え', 'お', 'か', 'a', 'i', 'u', 'e', 'o', 'ka'];
       return arr;
@@ -24471,6 +24472,7 @@ var _initialiseProps = function _initialiseProps() {
   };
 
   this.handleChange2 = function () {
+    /*TODO*/
     function getArray2(props) {
       var arr = ['ア', 'イ', 'ウ', 'エ', 'オ', 'カ', 'ア', 'イ', 'ウ', 'エ', 'オ', 'カ'];
       return arr;

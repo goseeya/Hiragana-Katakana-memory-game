@@ -75,7 +75,7 @@ class MemoryGame extends React.Component {
       val2:false,
     }
 
-    function getArray(props){
+    function getArray(props){/*TODO*/
       let arr = ['あ','い','う','え','お','か','a','i','u','e','o','ka']
       return arr;
     }
@@ -85,7 +85,7 @@ class MemoryGame extends React.Component {
     return <Square style={{boxSizing: 'border-box'}} value={this.state.squares[i]}
        onClick={ () => this.handleClick(i)} onDoubleClick={ () => this.handleClick2(i)}/>;
   }
-  handleChange1=()=>{
+  handleChange1=()=>{/*TODO*//*TODO*/
     function getArray(props){
       let arr = ['あ','い','う','え','お','か','a','i','u','e','o','ka']
       return arr;
@@ -96,7 +96,7 @@ class MemoryGame extends React.Component {
         tablica: getArray(),
       })
   }
-  handleChange2=()=>{
+  handleChange2=()=>{/*TODO*/
     function getArray2(props){
       let arr = ['ア','イ','ウ','エ','オ','カ','ア','イ','ウ','エ','オ','カ'];
       return arr;
@@ -196,8 +196,9 @@ class MemoryGame extends React.Component {
           <label for="cbox2">katakana</label>
           <p>moves: {this.state.counter}</p>
         </div>
-        <div className="status">{status}</div>
-        {tablicaSquare}
+        <div className="status">
+          {tablicaSquare}
+        </div>
         <input id='play' type="button" value="play again" onClick={this.handleClickReload}></input>
       </div>
     );
