@@ -11405,7 +11405,7 @@ exports = module.exports = __webpack_require__(86)(undefined);
 exports.push([module.i, "@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);", ""]);
 
 // module
-exports.push([module.i, "* {\n  font-family: 'Noto Sans JP', sans-serif; }\n\nheader {\n  height: 60px; }\n\nheader li {\n  font-weight: 900;\n  line-height: 35px;\n  text-transform: uppercase;\n  list-style: none;\n  display: inline;\n  padding: 10px;\n  float: right;\n  position: relative;\n  color: black; }\n\nheader > ul > li > a {\n  text-decoration: none;\n  color: black; }\n\n#hello {\n  font-size: 100px;\n  text-align: center;\n  padding-top: 250px;\n  color: white;\n  text-shadow: 2px 2px #000000; }\n\n.flag {\n  margin-top: -65px;\n  background-image: url(\"https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/EZWO30D5TV.jpg\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  height: 600px; }\n\n#menu {\n  margin-left: -30px;\n  position: absolute; }\n\n#menu li, a {\n  display: inline-block;\n  margin-left: -25px;\n  padding-right: 20px;\n  text-decoration: none;\n  color: white; }\n\n.options {\n  text-align: center;\n  padding-left: 100px;\n  padding-right: 100px; }\n\n.game {\n  text-align: center; }\n\n.square {\n  display: inline-block;\n  vertical-align: top;\n  border: 1px solid black;\n  border-radius: 30px;\n  margin: 20px;\n  line-height: 210px;\n  font-size: 200px;\n  text-align: center;\n  font-weight: bolder;\n  box-sizing: border-box;\n  width: 250px;\n  height: 250px;\n  background-image: url(" + __webpack_require__(55) + ");\n  background-position: center;\n  background-size: cover; }\n\n.letter {\n  font-size: 180px;\n  font-weight: bolder;\n  text-align: center;\n  line-height: 200px; }\n\n.letters div {\n  display: inline-block;\n  width: 250px; }\n\n.letters-back {\n  box-sizng: border-box;\n  height: 250px;\n  margin: 10px;\n  border: 1px solid gray;\n  border-radius: 20px;\n  background-image: url(" + __webpack_require__(55) + ");\n  background-position: center;\n  background-size: cover;\n  background-repeat: no-repeat; }\n\n#play {\n  display: block;\n  margin: 0 auto; }\n\n.status {\n  text-align: center; }\n\n.letter-inside {\n  width: 200px;\n  height: 200px; }\n\nfooter {\n  color: gray;\n  padding: 10px; }\n\nfooter a {\n  padding-left: 30px;\n  color: gray; }\n", ""]);
+exports.push([module.i, "* {\n  font-family: 'Noto Sans JP', sans-serif; }\n\nheader {\n  height: 60px; }\n\nheader li {\n  font-weight: 900;\n  line-height: 35px;\n  text-transform: uppercase;\n  list-style: none;\n  display: inline;\n  padding: 10px;\n  float: right;\n  position: relative;\n  color: black; }\n\nheader > ul > li > a {\n  text-decoration: none;\n  color: black; }\n\n#hello {\n  font-size: 100px;\n  text-align: center;\n  padding-top: 250px;\n  color: white;\n  text-shadow: 2px 2px #000000; }\n\n.flag {\n  margin-top: -65px;\n  background-image: url(\"https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/EZWO30D5TV.jpg\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  height: 600px; }\n\n#menu {\n  margin-left: -30px;\n  position: absolute; }\n\n#menu li, a {\n  display: inline-block;\n  margin-left: -25px;\n  padding-right: 20px;\n  text-decoration: none;\n  color: white; }\n\n.options {\n  text-align: center;\n  padding-left: 100px;\n  padding-right: 100px; }\n\n.game {\n  text-align: center; }\n\n.square {\n  display: inline-block;\n  vertical-align: top;\n  border: 1px solid black;\n  border-radius: 30px;\n  margin: 20px;\n  line-height: 210px;\n  font-size: 160px;\n  text-align: center;\n  font-weight: 900;\n  box-sizing: border-box;\n  width: 250px;\n  height: 250px;\n  background-image: url(" + __webpack_require__(55) + ");\n  background-position: center;\n  background-size: cover; }\n\n.letter {\n  font-size: 180px;\n  font-weight: bolder;\n  text-align: center;\n  line-height: 200px; }\n\n.letters div {\n  display: inline-block;\n  width: 250px; }\n\n.letters-back {\n  box-sizng: border-box;\n  height: 250px;\n  margin: 10px;\n  border: 1px solid gray;\n  border-radius: 20px;\n  background-image: url(" + __webpack_require__(55) + ");\n  background-position: center;\n  background-size: cover;\n  background-repeat: no-repeat; }\n\n#play {\n  display: block;\n  margin: 0 auto; }\n\n.status {\n  text-align: center; }\n\n.letter-inside {\n  width: 200px;\n  height: 200px; }\n\nfooter {\n  color: gray;\n  padding: 10px; }\n\nfooter a {\n  padding-left: 30px;\n  color: gray; }\n", ""]);
 
 // exports
 
@@ -24280,7 +24280,6 @@ var MemoryGame = function (_React$Component3) {
     _this3.state = {
       squares: Array(12).fill(null),
       tablica: getArray(),
-      // tablica2: getArray2(),
       tablicaMoja: [],
       klikniete: [],
       xIsNext: true,
@@ -24292,9 +24291,31 @@ var MemoryGame = function (_React$Component3) {
       val2: false
     };
 
+    function shuffleArray(array) {
+      for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+      return array;
+    }
+    //tablica znakow pomieszana i taka sama tablica tlumaczen
+    //potem losuje liczbe dowolna i od tej robie slicem z 1 tablicy i z 2
+    //lacze je w jedna tablice
+    //tasuję tę tablicę i tablica gotowa
     function getArray(props) {
-      /*TODO*/
-      var arr = ['あ', 'い', 'う', 'え', 'お', 'か', 'a', 'i', 'u', 'e', 'o', 'ka'];
+      var hiraganaArray = ["ら", "せ", "て", "よ", "お", "り", "や", "え", "そ", "も", "を", "ふ", "つ", "ろ", "ほ", "こ", "し", "あ", "わ", "ち", "ま", "な", "き", "み", "の", "た", "ね", "す", "ん", "と", "ひ", "へ", "む", "う", "は", "く", "る", "け", "ぬ", "に", "さ", "ゆ", "れ", "め", "か", "い", "ら", "せ", "て", "よ", "お"];
+      var hiraganaArrayTrans = ["ra", "se", "te", "yo", "o", "ri", "ya", "e", "so", "mo", "wo", "fu", "tsu", "ro", "ho", "ko", "shi", "a", "ne", "chi", "ma", "na", "ki", "mi", "no", "ta", "ne", "su", "n", "to", "hi", "he", "mu", "u", "ha", "ku", "ru", "ke", "nu", "ni", "sa", "yu", "re", "me", "ka", "i", "ra", "se", "te", "yo", "o"];
+      var startVar = Math.floor(Math.random() * 45 + 0);
+      var finalArrayHira = hiraganaArray.slice(startVar, startVar + 6);
+      var finalArrayHiraTrans = hiraganaArrayTrans.slice(startVar, startVar + 6);
+      var finalArrayHiraConc = finalArrayHira.concat(finalArrayHiraTrans);
+      var finalArrayHiraShuff = shuffleArray(finalArrayHiraConc);
+      // let arr = finalArrayHiraConc;
+      var arr = finalArrayHiraShuff;
+      // let arr = arr.sort(comparefn);
+
       return arr;
     }
 
@@ -24319,7 +24340,6 @@ var MemoryGame = function (_React$Component3) {
       var _this5 = this;
 
       this.setState({
-        backgroundImage: 'url("./flaga.jpg")',
         counter: this.state.counter + 1,
         selectedCounter: this.selectedCounter + 1
       });
@@ -24328,6 +24348,7 @@ var MemoryGame = function (_React$Component3) {
       console.log(this.state.tablica[i]);
       squares2[i] = this.state.tablica[i];
       this.state.klikniete.push(this.state.tablica[i]);
+      console.log(this.state.tablica);
       console.log(this.state.klikniete);
       this.setState({
         squares: squares2
@@ -24460,27 +24481,63 @@ var _initialiseProps = function _initialiseProps() {
 
   this.handleChange1 = function () {
     /*TODO*/
+    function shuffleArray(array) {
+      for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+      return array;
+    }
     function getArray(props) {
-      var arr = ['あ', 'い', 'う', 'え', 'お', 'か', 'a', 'i', 'u', 'e', 'o', 'ka'];
+      /*TODO*/
+      var hiraganaArray = ["ら", "せ", "て", "よ", "お", "り", "や", "え", "そ", "も", "を", "ふ", "つ", "ろ", "ほ", "こ", "し", "あ", "わ", "ち", "ま", "な", "き", "み", "の", "た", "ね", "す", "ん", "と", "ひ", "へ", "む", "う", "は", "く", "る", "け", "ぬ", "に", "さ", "ゆ", "れ", "め", "か", "い", "ら", "せ", "て", "よ", "お"];
+      var hiraganaArrayTrans = ["ra", "se", "te", "yo", "o", "ri", "ya", "e", "so", "mo", "wo", "fu", "tsu", "ro", "ho", "ko", "shi", "a", "ne", "chi", "ma", "na", "ki", "mi", "no", "ta", "ne", "su", "n", "to", "hi", "he", "mu", "u", "ha", "ku", "ru", "ke", "nu", "ni", "sa", "yu", "re", "me", "ka", "i", "ra", "se", "te", "yo", "o"];
+      var startVar = Math.floor(Math.random() * 45 + 0);
+      var finalArrayHira = hiraganaArray.slice(startVar, startVar + 6);
+      var finalArrayHiraTrans = hiraganaArrayTrans.slice(startVar, startVar + 6);
+      var finalArrayHiraConc = finalArrayHira.concat(finalArrayHiraTrans);
+      var finalArrayHiraShuff = shuffleArray(finalArrayHiraConc);
+      var arr = finalArrayHiraShuff;
       return arr;
     }
+
     _this9.setState({
       val1: true,
       val2: false,
-      tablica: getArray()
+      tablica: getArray(),
+      counter: 0
     });
   };
 
   this.handleChange2 = function () {
     /*TODO*/
+    function shuffleArray(array) {
+      for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+      return array;
+    }
     function getArray2(props) {
-      var arr = ['ア', 'イ', 'ウ', 'エ', 'オ', 'カ', 'ア', 'イ', 'ウ', 'エ', 'オ', 'カ'];
+      var katakanaArray = ["ツ", "ソ", "ヒ", "ヨ", "コ", "ネ", "ワ", "キ", "カ", "ヘ", "ト", "ホ", "ニ", "ノ", "ア", "ル", "ユ", "マ", "ク", "ラ", "ヲ", "ヌ", "ス", "セ", "サ", "ヤ", "オ", "ロ", "ハ", "メ", "フ", "テ", "チ", "リ", "ウ", "モ", "イ", "レ", "エ", "タ", "ナ", "ム", "ミ", "ケ", "シ", "ツ", "ソ", "ヒ", "ヨ", "コ"];
+      var katakanaArrayTrans = ["tsu", "so", "hi", "yo", "ko", "ne", "fu", "ki", "ka", "he", "to", "ho", "ni", "no", "a", "ru", "yu", "ma", "ku", "ra", "wo", "nu", "su", "se", "sa", "ya", "o", "ro", "hs", "me", "fu", "te", "chi", "ri", "u", "mo", "i", "re", "e", "ta", "na", "mu", "mi", "ke", "shi", "tsu", "so", "hi", "yo", "ko"];
+      var startVar = Math.floor(Math.random() * 44 + 0);
+      var finalArrayKata = katakanaArray.slice(startVar, startVar + 6);
+      var finalArrayKataTrans = katakanaArrayTrans.slice(startVar, startVar + 6);
+      var finalArrayKataConc = finalArrayKata.concat(finalArrayKataTrans);
+      var finalArrayKataShuff = shuffleArray(finalArrayKataConc);
+      var arr = finalArrayKataShuff;
       return arr;
     }
     _this9.setState({
       val1: false,
       val2: true,
-      tablica: getArray2()
+      tablica: getArray2(),
+      counter: 0
     });
   };
 

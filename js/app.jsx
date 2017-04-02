@@ -63,7 +63,6 @@ class MemoryGame extends React.Component {
     this.state = {
       squares: Array(12).fill(null),
       tablica: getArray(),
-      // tablica2: getArray2(),
       tablicaMoja: [],
       klikniete: [],
       xIsNext: true,
@@ -75,8 +74,41 @@ class MemoryGame extends React.Component {
       val2:false,
     }
 
-    function getArray(props){/*TODO*/
-      let arr = ['あ','い','う','え','お','か','a','i','u','e','o','ka']
+    function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
+//tablica znakow pomieszana i taka sama tablica tlumaczen
+//potem losuje liczbe dowolna i od tej robie slicem z 1 tablicy i z 2
+//lacze je w jedna tablice
+//tasuję tę tablicę i tablica gotowa
+    function getArray(props){
+      let hiraganaArray = ["ら", "せ", "て", "よ", "お", "り", "や",
+      "え", "そ", "も", "を", "ふ", "つ", "ろ",
+      "ほ", "こ", "し", "あ", "わ", "ち", "ま", "な", "き", "み", "の",
+      "た", "ね", "す", "ん", "と", "ひ", "へ", "む", "う", "は", "く",
+      "る", "け", "ぬ", "に", "さ", "ゆ", "れ", "め", "か", "い",
+      "ら", "せ", "て", "よ", "お"]
+      let hiraganaArrayTrans = ["ra", "se", "te", "yo", "o", "ri", "ya",
+      "e", "so", "mo", "wo", "fu", "tsu", "ro",
+      "ho", "ko", "shi", "a", "ne", "chi", "ma", "na", "ki", "mi", "no",
+      "ta", "ne", "su", "n", "to", "hi", "he", "mu", "u", "ha", "ku",
+      "ru", "ke", "nu", "ni", "sa", "yu", "re", "me", "ka", "i",
+      "ra", "se", "te", "yo", "o"]
+      let startVar = Math.floor((Math.random() * 45) + 0);
+      let finalArrayHira = hiraganaArray.slice(startVar,startVar+6);
+      let finalArrayHiraTrans = hiraganaArrayTrans.slice(startVar,startVar+6);
+      let finalArrayHiraConc = finalArrayHira.concat(finalArrayHiraTrans);
+      let finalArrayHiraShuff = shuffleArray(finalArrayHiraConc);
+      // let arr = finalArrayHiraConc;
+      let arr = finalArrayHiraShuff;
+      // let arr = arr.sort(comparefn);
+
       return arr;
     }
 
@@ -86,25 +118,79 @@ class MemoryGame extends React.Component {
        onClick={ () => this.handleClick(i)} onDoubleClick={ () => this.handleClick2(i)}/>;
   }
   handleChange1=()=>{/*TODO*/
-    function getArray(props){
-      let arr = ['あ','い','う','え','お','か','a','i','u','e','o','ka']
+    function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
+    function getArray(props){/*TODO*/
+      let hiraganaArray = ["ら", "せ", "て", "よ", "お", "り", "や",
+      "え", "そ", "も", "を", "ふ", "つ", "ろ",
+      "ほ", "こ", "し", "あ", "わ", "ち", "ま", "な", "き", "み", "の",
+      "た", "ね", "す", "ん", "と", "ひ", "へ", "む", "う", "は", "く",
+      "る", "け", "ぬ", "に", "さ", "ゆ", "れ", "め", "か", "い",
+      "ら", "せ", "て", "よ", "お"]
+      let hiraganaArrayTrans = ["ra", "se", "te", "yo", "o", "ri", "ya",
+      "e", "so", "mo", "wo", "fu", "tsu", "ro",
+      "ho", "ko", "shi", "a", "ne", "chi", "ma", "na", "ki", "mi", "no",
+      "ta", "ne", "su", "n", "to", "hi", "he", "mu", "u", "ha", "ku",
+      "ru", "ke", "nu", "ni", "sa", "yu", "re", "me", "ka", "i",
+      "ra", "se", "te", "yo", "o"]
+      let startVar = Math.floor((Math.random() * 45) + 0);
+      let finalArrayHira = hiraganaArray.slice(startVar,startVar+6);
+      let finalArrayHiraTrans = hiraganaArrayTrans.slice(startVar,startVar+6);
+      let finalArrayHiraConc = finalArrayHira.concat(finalArrayHiraTrans);
+      let finalArrayHiraShuff = shuffleArray(finalArrayHiraConc);
+      let arr = finalArrayHiraShuff;
       return arr;
     }
+
     this.setState({
         val1: true,
         val2: false,
         tablica: getArray(),
+        counter: 0,
       })
   }
+
   handleChange2=()=>{/*TODO*/
+    function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
     function getArray2(props){
-      let arr = ['ア','イ','ウ','エ','オ','カ','ア','イ','ウ','エ','オ','カ'];
+      let katakanaArray = ["ツ", "ソ", "ヒ", "ヨ", "コ", "ネ", "ワ",
+      "キ", "カ", "ヘ", "ト", "ホ", "ニ", "ノ", "ア", "ル", "ユ", "マ",
+      "ク", "ラ", "ヲ", "ヌ", "ス", "セ", "サ", "ヤ", "オ", "ロ",
+      "ハ", "メ", "フ", "テ", "チ", "リ", "ウ", "モ", "イ", "レ",
+      "エ", "タ", "ナ", "ム", "ミ", "ケ", "シ", "ツ", "ソ", "ヒ", "ヨ", "コ"]
+      let katakanaArrayTrans = ["tsu", "so", "hi", "yo", "ko", "ne", "fu",
+      "ki", "ka", "he", "to", "ho", "ni", "no", "a", "ru", "yu", "ma",
+      "ku", "ra", "wo", "nu", "su", "se", "sa", "ya", "o", "ro",
+      "hs", "me", "fu", "te", "chi", "ri", "u", "mo", "i", "re",
+      "e", "ta", "na", "mu", "mi", "ke", "shi", "tsu", "so", "hi", "yo", "ko"]
+      let startVar = Math.floor((Math.random() * 44) + 0);
+      let finalArrayKata = katakanaArray.slice(startVar,startVar+6);
+      let finalArrayKataTrans = katakanaArrayTrans.slice(startVar,startVar+6);
+      let finalArrayKataConc = finalArrayKata.concat(finalArrayKataTrans);
+      let finalArrayKataShuff = shuffleArray(finalArrayKataConc);
+      let arr = finalArrayKataShuff;
       return arr;
     }
       this.setState({
         val1: false,
         val2: true,
         tablica: getArray2(),
+        counter: 0,
       })
   }
   handleClickReload=()=>{
@@ -112,7 +198,6 @@ class MemoryGame extends React.Component {
   }
   handleClick(i) {
     this.setState({
-      backgroundImage: 'url("./flaga.jpg")',
       counter: this.state.counter+1,
       selectedCounter: this.selectedCounter+1,
     })
@@ -121,6 +206,7 @@ class MemoryGame extends React.Component {
     console.log(this.state.tablica[i]);
     squares2[i] = this.state.tablica[i];
     this.state.klikniete.push(this.state.tablica[i]);
+    console.log(this.state.tablica);
     console.log(this.state.klikniete);
     this.setState({
       squares: squares2,
