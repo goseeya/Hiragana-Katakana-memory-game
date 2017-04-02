@@ -85,7 +85,7 @@ class MemoryGame extends React.Component {
     return <Square style={{boxSizing: 'border-box'}} value={this.state.squares[i]}
        onClick={ () => this.handleClick(i)} onDoubleClick={ () => this.handleClick2(i)}/>;
   }
-  handleChange1=()=>{/*TODO*//*TODO*/
+  handleChange1=()=>{/*TODO*/
     function getArray(props){
       let arr = ['あ','い','う','え','お','か','a','i','u','e','o','ka']
       return arr;

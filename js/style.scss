@@ -5,17 +5,14 @@
 }
 
 header {
-  // background-color: #CC0000;
   height: 60px;
 }
 
 header li {
   font-weight: 900;
   line-height: 35px;
-  // font-weight: bolder;
   text-transform: uppercase;
   list-style: none;
-  // margin-right: 10px;
   display: inline;
   padding: 10px;
   float: right;
@@ -29,10 +26,6 @@ header>ul>li>a{
 #hello{
   font-size: 100px;
   text-align: center;
-  // line-height: 500px;
-  // margin: 100px auto 0px 100px;
-  // margin-left: -450px;
-  // float: left;
   padding-top: 250px;
   color: white;
   text-shadow: 2px 2px #000000;
@@ -48,12 +41,8 @@ header>ul>li>a{
   height: 600px;
 }
 
-// header ul li ul{
-//   visibility: hidden;
-// }
 
 #menu{
-  // float: left;
   margin-left: -30px;
   position: absolute;
 }
@@ -67,21 +56,13 @@ header>ul>li>a{
 }
 
 .options {
-  // background-color: #CC0000
-  // margin-top: -18px;
   text-align: center;
   padding-left: 100px;
   padding-right: 100px;
 }
 
-.options p {
-  // margin-left: 100px;
-  // margin-right: 100px;
-}
-
 .game {
   text-align: center;
-
 }
 
 .square {
@@ -102,29 +83,18 @@ header>ul>li>a{
   background-size: cover;
 }
 
-
-.letters {
-  // width: 800px;
-  // background-image: url("../sushiroll.jpg");
-
-}
 .letter {
   font-size: 180px;
   font-weight: bolder;
   text-align: center;
   line-height: 200px;
-
-
 }
 .letters div {
   display: inline-block;
   width: 250px;
-
-  // background-color: #CC0000;
 }
 .letters-back {
   box-sizng: border-box;
-
   height: 250px;
   margin: 10px;
   border: 1px solid gray;
@@ -137,14 +107,12 @@ header>ul>li>a{
 
 #play {
   display: block;
-  // width: 50%;
   margin: 0 auto;
 
 }
 
 .status {
   text-align: center;
-  // margin-left: 40px;;
 }
 
 .letter-inside {
@@ -152,8 +120,6 @@ header>ul>li>a{
   height: 200px;
 }
 footer {
-  // height: 60px;
-
   color: gray;
   padding: 10px;
 }

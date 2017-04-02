@@ -24459,7 +24459,7 @@ var _initialiseProps = function _initialiseProps() {
   var _this9 = this;
 
   this.handleChange1 = function () {
-    /*TODO*/ /*TODO*/
+    /*TODO*/
     function getArray(props) {
       var arr = ['あ', 'い', 'う', 'え', 'お', 'か', 'a', 'i', 'u', 'e', 'o', 'ka'];
       return arr;
