@@ -63,10 +63,9 @@ class MemoryGame extends React.Component {
     this.state = {
       squares: Array(12).fill(null),
       tablica: getArray(),
-      // tablica2: getArray2(),
       tablicaMoja: [],
       hira: ['あ','い','う','え','お','か','き','く','け','こ','さ','し','す','せ','そ','た','ち','つ','て','と','な','に','ぬ','ね','の','ん','は','ひ','ふ','へ','ほ','ま','み','む','め','も','や','ゆ','よ','ら','り','る','れ','ろ','わ','を','a','i','u','e','o','ka','ki','ku','ke','ko','sa','shi','su','se','so','ta','chi','tsu','te','to','na','ni','nu','ne','no','n','ha','hi','fu','he','ho','ma','mi','mu','me','mo','ya','yu','yo','ra','ri','ru','re','ro','wa','wo'],
-      kata: [],
+      kata: ['ア','イ','ウ','エ','オ','カ','キ','ク','ケ','コ','サ','シ','ス','セ','ソ','タ','チ','ツ','テ','ト','ナ','ニ','ヌ','ネ','ノ','ハ','ヒ','フ','ヘ','ホ','マ','ミ','ム','メ','モ','ヤ','ユ','ヨ','ラ','リ','ル','レ','ロ','ワ','ヲ','ン','a','i','u','e','o','ka','ki','ku','ke','ko','sa','shi','su','se','so','ta','chi','tsu','te','to','na','ni','nu','ne','no','ha','hi','fu','he','ho','ma','mi','mu','me','mo','ya','yu','yo','ra','ri','ru','re','ro','wa','wo','n'],
       klikniete: [],
       xIsNext: true,
       pary: [],
@@ -172,12 +171,12 @@ class MemoryGame extends React.Component {
       "キ", "カ", "ヘ", "ト", "ホ", "ニ", "ノ", "ア", "ル", "ユ", "マ",
       "ク", "ラ", "ヲ", "ヌ", "ス", "セ", "サ", "ヤ", "オ", "ロ",
       "ハ", "メ", "フ", "テ", "チ", "リ", "ウ", "モ", "イ", "レ",
-      "エ", "タ", "ナ", "ム", "ミ", "ケ", "シ", "ツ", "ソ", "ヒ", "ヨ", "コ"]
+      "エ", "タ", "ナ", "ム", "ミ", "ケ", 'ン', "シ", "ツ", "ソ", "ヒ", "ヨ", "コ"]
       let katakanaArrayTrans = ["tsu", "so", "hi", "yo", "ko", "ne", "fu",
       "ki", "ka", "he", "to", "ho", "ni", "no", "a", "ru", "yu", "ma",
       "ku", "ra", "wo", "nu", "su", "se", "sa", "ya", "o", "ro",
       "hs", "me", "fu", "te", "chi", "ri", "u", "mo", "i", "re",
-      "e", "ta", "na", "mu", "mi", "ke", "shi", "tsu", "so", "hi", "yo", "ko"]
+      "e", "ta", "na", "mu", "mi", "ke",'n', "shi", "tsu", "so", "hi", "yo", "ko"]
       let startVar = Math.floor((Math.random() * 44) + 0);
       let finalArrayKata = katakanaArray.slice(startVar,startVar+6);
       let finalArrayKataTrans = katakanaArrayTrans.slice(startVar,startVar+6);
@@ -211,7 +210,7 @@ class MemoryGame extends React.Component {
       squares: squares2,
     });
     this.timerId=setTimeout(()=>{
-      if(this.state.klikniete.length==2||this.state.para==''){
+      if(this.state.klikniete.length==2){
         let squaresNew = this.state.squares.slice();
         this.setState({squares: Array(12).fill(null),
           klikniete: [],
@@ -222,24 +221,15 @@ class MemoryGame extends React.Component {
       this.setState({squares: Array(12).fill(null), klikniete:[]})
     }
 
-    // if(this.state.klikniete.length===2&&this.state.tablica.indexOf(this.state.klikniete[this.state.klikniete.length-1])===this.state.tablica.indexOf(this.state.klikniete[this.state.klikniete.length-2])+6||
-    // this.state.klikniete.length===2&&this.state.tablica.indexOf(this.state.klikniete[this.state.klikniete.length-1])===this.state.tablica.indexOf(this.state.klikniete[this.state.klikniete.length-2])-6){
-    //   console.log('para');
-    //   console.log(i);
-    //   this.state.pary.push(i);
-    // }
-
     if(this.state.klikniete.length===2&&this.state.hira.indexOf(this.state.klikniete[this.state.klikniete.length-1])===this.state.hira.indexOf(this.state.klikniete[this.state.klikniete.length-2])+46||
     this.state.klikniete.length===2&&this.state.hira.indexOf(this.state.klikniete[this.state.klikniete.length-1])===this.state.hira.indexOf(this.state.klikniete[this.state.klikniete.length-2])-46
-  ||this.state.klikniete.length===2&&this.state.kata.indexOf(this.state.klikniete[this.state.klikniete.length-1])===this.state.kata.indexOf(this.state.klikniete[this.state.klikniete.length-2])+45||
-  this.state.klikniete.length===2&&this.state.kata.indexOf(this.state.klikniete[this.state.klikniete.length-1])===this.state.kata.indexOf(this.state.klikniete[this.state.klikniete.length-2])-45){
+  ||this.state.klikniete.length===2&&this.state.kata.indexOf(this.state.klikniete[this.state.klikniete.length-1])===this.state.kata.indexOf(this.state.klikniete[this.state.klikniete.length-2])+46||
+  this.state.klikniete.length===2&&this.state.kata.indexOf(this.state.klikniete[this.state.klikniete.length-1])===this.state.kata.indexOf(this.state.klikniete[this.state.klikniete.length-2])-46){
       console.log('para');
       console.log(i);
       this.state.pary.push(i);
 
     }
-
-
 
   }
   render(i) {
@@ -270,44 +260,22 @@ class MemoryGame extends React.Component {
                       onClick={ () => this.handleClick(11)}/>
               ]
 
-
-
-              if(this.state.klikniete.length===2&&this.state.hira.indexOf(this.state.klikniete[this.state.klikniete.length-1])===this.state.hira.indexOf(this.state.klikniete[this.state.klikniete.length-2])+46||
-              this.state.klikniete.length===2&&this.state.hira.indexOf(this.state.klikniete[this.state.klikniete.length-1])===this.state.hira.indexOf(this.state.klikniete[this.state.klikniete.length-2])-46
-              ||this.state.klikniete.length===2&&this.state.kata.indexOf(this.state.klikniete[this.state.klikniete.length-1])===this.state.kata.indexOf(this.state.klikniete[this.state.klikniete.length-2])+45||
-              this.state.klikniete.length===2&&this.state.kata.indexOf(this.state.klikniete[this.state.klikniete.length-1])===this.state.kata.indexOf(this.state.klikniete[this.state.klikniete.length-2])-45){
-                console.log('tu kod na zatrzymanie kart');
-                console.log(this.state.tablica);
-              console.log(this.state.klikniete);
-              console.log(this.state.tablica.indexOf(this.state.klikniete[1]));
-                tablicaSquare[this.state.tablica.indexOf(this.state.klikniete[1])]=<Square value={'OK'}/>
-                tablicaSquare[this.state.tablica.indexOf(this.state.klikniete[0])]=<Square value={'OK'}/>
-
+              for (var i = 0; i < 12; i++) {
+                console.log(this.state.pary);
+                if(this.state.pary.indexOf(i)>=0){
+                  tablicaSquare[i]=<Square value={this.state.tablica[i]}/>
+                  if(this.state.tablica.indexOf(this.state.hira[this.state.hira.indexOf(this.state.tablica[i])+46])>0){
+                    tablicaSquare[this.state.tablica.indexOf(this.state.hira[this.state.hira.indexOf(this.state.tablica[i])+46])]=<Square value={this.state.hira[this.state.hira.indexOf(this.state.tablica[i])+46]}/>
+                  } else if(this.state.tablica.indexOf(this.state.hira[this.state.hira.indexOf(this.state.tablica[i])-46])>0){
+                    tablicaSquare[this.state.tablica.indexOf(this.state.hira[this.state.hira.indexOf(this.state.tablica[i])-46])]=<Square value={this.state.hira[this.state.hira.indexOf(this.state.tablica[i])-46]}/>
+                  } else if(this.state.tablica.indexOf(this.state.kata[this.state.kata.indexOf(this.state.tablica[i])+46])>0){
+                    tablicaSquare[this.state.tablica.indexOf(this.state.kata[this.state.kata.indexOf(this.state.tablica[i])+46])]=<Square value={this.state.kata[this.state.kata.indexOf(this.state.tablica[i])+46]}/>
+                    } else if(this.state.tablica.indexOf(this.state.kata[this.state.kata.indexOf(this.state.tablica[i])-46])>0){
+                    tablicaSquare[this.state.tablica.indexOf(this.state.kata[this.state.kata.indexOf(this.state.tablica[i])-46])]=<Square value={this.state.kata[this.state.kata.indexOf(this.state.tablica[i])-46]}/>
+                  }
+                }
               }
 
-
-
-//       for (var i = 0; i < 12; i++) {
-//         console.log(this.state.pary);
-//         if(this.state.pary.indexOf(i)>=0){
-//           tablicaSquare[i]=<Square value={this.state.tablica[i]}/>
-//           tablicaSquare[
-// // indeks tego samego czyli +46 lub minus w this state hira ale to w tablicy
-//             this.state.tablica.indexOf(this.state.hira[this.state.hira.indexOf(i)+46])
-//           ]=<Square value={'ddddd'}/>
-//             tablicaSquare[
-//   // indeks tego samego czyli +46 lub minus w this state hira ale to w tablicy
-//               this.state.tablica.indexOf(this.state.hira[this.state.hira.indexOf(i)-46])
-//             ]=<Square value={'ddddd'}/>
-//         }
-//       }
-      // for (var i = 6; i < 12; i++) {
-      //   console.log(this.state.pary);
-      //   if(this.state.pary.indexOf(i)>=0){
-      //     tablicaSquare[i]=<Square value={this.state.tablica[i]}/>
-      //     tablicaSquare[i-6]=<Square value={this.state.tablica[i-6]}/>
-      //   }
-      // }
     return (
       <div>
         <div className='options'>
